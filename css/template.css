@@ -1,0 +1,104 @@
+@charset "utf-8";
+/* CSS AddImg-API*/
+
+/*
+*************************************************************************************************
+											Index
+*************************************************************************************************
+*/
+/*1- Classe Globales */
+/*2- Header */
+/*3- Footer */
+
+
+/*
+*********************************************
+			1- Classes globales
+*********************************************
+*/
+.globale{
+	max-width:1200px;
+	padding:auto;
+	margin:auto;
+}
+
+.globale span{
+	display:inline-block;
+	padding-bottom:10px;
+	padding-left:10px;
+	padding-right:10px;
+	padding-top:10px;
+}
+
+
+.blue, .blue a, .blue span {
+  	color: rgb(0, 122, 255);
+	
+	padding-bottom:15px;
+}
+.blanc, .blanc a, .blan span {
+  	color:#FFF;
+	
+	padding-bottom:15px;
+}
+.btn-primary {
+  color: #fff;
+  background-color: rgb(0, 122, 255);
+  border-color: #2e6da4;
+}
+.btn-primary i {
+	padding-left: 5px;
+	padding-right:5px;
+}
+.list-group{
+	list-style:none;
+}
+.taches li button{
+	width:100px;
+	border-radius:6px;
+}
+/*
+*********************************************
+			2- Header
+*********************************************
+*/
+nav { 
+margin : auto;
+padding:auto;
+}
+.formulaire{
+	max-width:450px;
+}
+.header-api{
+border-top : 2px solid rgb(0, 122, 255);
+
+}
+
+.navigation{
+max-width:640px;
+padding:auto;
+margin:auto;
+
+}
+/*
+*********************************************
+			3- Footer
+*********************************************
+*/
+footer{
+	background-color:#e7e7e7;
+	max-width:1200px;
+	min-height:100px;
+	padding:auto;
+	margin:auto;
+	border-radius:4px;
+	border-bottom: 2px solid rgb(0, 122, 255);
+	color:#FFF;
+}
+footer i {
+	padding-right:10px;
+}
+
+.credits p{
+	padding-top:10px;
+}

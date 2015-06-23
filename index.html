@@ -1,0 +1,184 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>TODO list responsive</title>
+<meta name="description" itemprop="description" content="TODO list responsive" />
+<meta name="keywords" itemprop="keywords" content="html5, css3, bootstrap 3, jquery, jquery ui" />
+<meta name="author" content="Sami Tlili">
+<!--Open graph-->
+<meta property="og:url" content="http://www.samitlili.com" />
+<meta property="og:image" content="http://www.samitlili.com/image.jpg" />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="TODO list responsive" />
+<meta property="og:description" content="TODO list responsive en utilisant HTML5 , CSS3, jQuery et Bootstrap." />
+<meta property="og:locale" content="fr_FR" />
+<!-- CSS Bootstrap-->
+<link href="css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+<!-- CSS Font-awesome-->
+<link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+<!-- CSS Template-->
+<link href="css/template.css" rel="stylesheet" type="text/css"/>
+<!--jQuery-->
+<script type="text/javascript" src="js/jquery.js"></script>
+<!--JS Bootstrap-->
+<script type="text/javascript" src="js/bootstrap.min.js"></script>
+</head>
+
+
+<body>
+
+
+
+
+<div class="header-api"><!--.header-api-->
+	<nav class="navbar navbar-default navbar-static-top"><!--.navbar-->
+  	<div class="container-fluid navigation"><!--.container-fluid-->
+    	<div class="navbar-header"><!--.navbar-header-->
+      	<a class="navbar-brand" href="index.html">
+        <i class="fa fa-pencil-square fa-1x blue"></i>
+      	</a>
+      
+    	</div><!--/.navbar-header-->
+    	<div>
+        	<form id="taches-liste" class="navbar-form navbar-left">
+        		<div class="form-group">
+          			<input id="tache" type="text" class="form-control formulaire" placeholder="Veuillez saisir votre texte">
+        		</div>
+        		<button id="BTN2" type="button" class="btn btn-primary"><i class="fa fa-refresh"></i>Rafraichir</button>
+                <button type="button" class="btn btn-primary"><i class="fa fa-github"></i>Github</button>
+                <button id="BTN3" type="button" class="btn btn-primary"><i class="fa fa-minus-circle"></i>Tout effacer</button>
+        	</form>
+   		</div>
+        <div class="form-group navbar-left">
+        	
+        </div>
+        
+  	</div><!--/.container-fluid-->
+ </nav><!--/.navbar-->
+</div><!--/.header-api-->
+
+<div id="" class="container globale"><!--.container-->
+		<div class="row"><!--.row-->
+        <div class="col-md-4"><!--Marge-->
+            </div>
+        	<div class="col-md-4 "><!--Images et boutton supprimer-->
+            	<div class="list-group"><ul align="center" id="taches" class="list-group"></ul></div>
+            </div><!--Images et boutton supprimer-->
+            <div class="col-md-4"><!--Marge-->
+            </div>
+            
+        </div><!--/.row-->
+
+</div><!--/.container-->
+<style>
+
+</style>
+<footer>
+	<div class="container"><!--.container-fluid-->
+    	<div class="row"><!--.row-->
+        	<div class="col-md-4 credits">
+            	<p><i class="fa fa-download fa-1x blue"></i><span>Télécharger</span></p>
+                <p><i class="fa fa-angle-double-right fa-1x blue"></i><span>Démo</span></p>
+                <p><i class="fa fa-hand-o-right fa-1x blue"></i><span>Voir d'autres Template</span></p>
+            </div>
+            
+            <div class="col-md-4">
+            </div>
+            
+            <div class="col-md-4 credits">
+            	<p><i class="fa fa-code fa-1x blanc"></i><span class="blue">Sami Tlili</span></p>
+                <p><i class="fa fa-external-link-square fa-1x blanc"></i><span class="blue">Lorempixel.com</span></p>
+                <p><i class="fa fa-hand-o-right fa-1x blanc"></i><span class="blue">Voir d'autres Template</span></p>
+            </div>
+            
+        </div><!--/.row-->
+    </div><!--/.container--fluid-->
+</footer>
+
+
+
+<!------------------------------------------------------------------------------------------------------------>
+
+<script>
+// Chargement des tâches stockées
+
+$(document).ready(function() {
+
+  
+
+  var i = 0;
+
+  for( i = 0; i<localStorage.length; i++)
+    $("#taches").append("<li id='tache-"+ i +"'>" + localStorage.getItem('tache-'+i) +
+                     " <button id='btn-"+i+"'><i class='fa fa-times'></i>Effacer</button></li>");
+	$("#taches li").addClass("list-group");// On ajoute la classe Bootstrap.
+	$("#taches li button").addClass("btn-primary");// On ajoute la classe Bootstrap.
+ //Supprimer les tâches
+
+
+
+});
+
+// Ajouter une tâche
+$(document).ready(function() {
+
+var i = 0;
+  
+    $("#taches-liste").submit(function() {
+    if ($("#tache").val() != "" ) {
+      localStorage.setItem( "tache-"+i, $("#tache").val() );
+      $("#taches").append("<li id='tache-"+i+"'>"+localStorage.getItem("tache-"+i) +
+                         " <button id='btn-"+i+"'><i class='fa fa-times'></i>Effacer</button>");
+		$("#taches li").addClass("list-group");// On ajoute la classe Bootstrap.
+		$("#taches li button").addClass("btn-primary");// On ajoute la classe Bootstrap.					 		 
+      	$("#tache").val("");
+   
+   //Supprimer des tâches
+	$("#taches li button").on("click", function() {
+    localStorage.removeItem($(this).parent().attr("id"));
+    $(this).parent().hide();
+    for(i=0; i<localStorage.length; i++) {
+      if( !localStorage.getItem("tache-"+i)) {
+        localStorage.setItem("tache-"+i, localStorage.getItem('tache-' + (i+1) ) );
+        localStorage.removeItem('tache-'+ (i+1) );
+		
+      }
+    }
+
+  });  
+	  i++;
+	  
+    }
+	return false;
+	location.reload();
+
+ });
+ 
+  
+});
+
+
+
+//Actualiser la page
+	
+$( "#BTN2").on( "click", function() {
+alert("Permet d'actualiser votre API");
+location.reload();
+});
+
+//Efface le local storage.
+	
+$( "#BTN3").on( "click", function() {
+alert("Toutes vos tâches vont être effacées");
+localStorage.clear();
+location.reload();
+});
+
+</script>
+
+
+
+
+</body>
+</html>
