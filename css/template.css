@@ -80,6 +80,9 @@ padding:auto;
 margin:auto;
 
 }
+.btn-primary a{
+	color:#FFF;
+	}
 /*
 *********************************************
 			3- Footer
@@ -101,4 +104,11 @@ footer i {
 
 .credits p{
 	padding-top:10px;
+}
+.credits-gauche p{
+	padding-top:10px;
+}
+
+.credits-gauche a{
+	color:#FFF;
 }

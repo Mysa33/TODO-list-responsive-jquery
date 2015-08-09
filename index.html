@@ -46,7 +46,7 @@
           			<input id="tache" type="text" class="form-control formulaire" placeholder="Veuillez saisir votre texte">
         		</div>
         		<button id="BTN2" type="button" class="btn btn-primary"><i class="fa fa-refresh"></i>Rafraichir</button>
-                <button type="button" class="btn btn-primary"><i class="fa fa-github"></i>Github</button>
+                <button type="button" class="btn btn-primary"><i class="fa fa-github"></i><a href="https://github.com/Mysa33/" title="APIs et templates " target="_blank">Github</a></button>
                 <button id="BTN3" type="button" class="btn btn-primary"><i class="fa fa-minus-circle"></i>Tout effacer</button>
         	</form>
    		</div>
@@ -77,19 +77,18 @@
 <footer>
 	<div class="container"><!--.container-fluid-->
     	<div class="row"><!--.row-->
-        	<div class="col-md-4 credits">
-            	<p><i class="fa fa-download fa-1x blue"></i><span>Télécharger</span></p>
-                <p><i class="fa fa-angle-double-right fa-1x blue"></i><span>Démo</span></p>
-                <p><i class="fa fa-hand-o-right fa-1x blue"></i><span>Voir d'autres Template</span></p>
+        	<div class="col-md-4 credits-gauche">
+            	<p><i class="fa fa-download fa-1x blue"></i><span><a href="https://github.com/Mysa33/TODO-list-responsive-jquery" title="Télécharger le zip de l'API" target="_blank">Télécharger</a></span></p>
+                <p><i class="fa fa-angle-double-right fa-1x blue"></i><span><a href="http://www.samitlili.com//API/todo-list-responsive-submit/index.html" title="TODO liste responsive Bootstrap 3" target="_blank">Démo</a></span></p>
             </div>
             
             <div class="col-md-4">
             </div>
             
             <div class="col-md-4 credits">
-            	<p><i class="fa fa-code fa-1x blanc"></i><span class="blue">Sami Tlili</span></p>
-                <p><i class="fa fa-external-link-square fa-1x blanc"></i><span class="blue">Lorempixel.com</span></p>
-                <p><i class="fa fa-hand-o-right fa-1x blanc"></i><span class="blue">Voir d'autres Template</span></p>
+            	<p><i class="fa fa-code fa-1x blanc"></i><span class="blue"><a href="http://www.samitlili.com"title="Developpeur Front-end" target="_blank">Sami Tlili</a></span></p>
+                <!--<p><i class="fa fa-external-link-square fa-1x blanc"></i><span class="blue">Lorempixel.com</span></p>-->
+                <p><i class="fa fa-hand-o-right fa-1x blanc"></i><span class="blue"><a href="http://www.samitlili.com/category/les-gratuits/" title="Templates gratuits" target="_blank">Voir d'autres Template</a></span></p>
             </div>
             
         </div><!--/.row-->
@@ -97,8 +96,7 @@
 </footer>
 
 
-
-<!------------------------------------------------------------------------------------------------------------>
+<!--jQuery-->
 
 <script>
 // Chargement des tâches stockées
@@ -116,9 +114,8 @@ $(document).ready(function() {
 	$("#taches li button").addClass("btn-primary");// On ajoute la classe Bootstrap.
  //Supprimer les tâches
 
-
-
 });
+
 
 // Ajouter une tâche
 $(document).ready(function() {
@@ -150,12 +147,10 @@ var i = 0;
 	  i++;
 	  
     }
-	return false;
 	location.reload();
 
  });
- 
-  
+   
 });
 
 
