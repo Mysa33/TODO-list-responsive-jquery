@@ -13,6 +13,7 @@ function setStorage(){
     if (taskVal != "" ) {
         localStorage.setItem( "tache-"+i, taskVal );
         location.reload();
+
     }     
 }
 // Get task/ Delete 
@@ -20,6 +21,7 @@ function getStorageID(){
     var elemID = this.id;
     var reg  =   /[0-9]/g;
     var numberInID = reg.test ( elemID );
+    //si l'id du btn contient un int 
     if(numberInID == true){
           //Get int in ID    
           var re1='.*?';	
@@ -29,8 +31,8 @@ function getStorageID(){
           if (m != null){
               var signed_int1=m[1];//
               var intID = signed_int1.replace(/</,"&lt;");
-              var taskIndex = 'tache'+signed_int1;
-              $('#'+elemID).remove();
+              var taskIndex = 'tache'+intID;
+              $('#'+taskIndex).remove();
               localStorage.removeItem(taskIndex);
               location.reload();
           }    
